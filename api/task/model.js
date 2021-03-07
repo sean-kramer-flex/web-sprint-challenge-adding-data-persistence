@@ -2,6 +2,7 @@ const db = require('../../data/dbConfig')
 
 function createTask (task) {
   return db.insert(task).into('tasks')
+ 
 }
 
 function getTasks () {
