@@ -13,4 +13,15 @@ res.status(201).json(newTask)
   }
 })
 
+
+router.get('/', async (req, res, next) => {
+  try {
+const data = await tasksModel.getTasks()
+
+res.json(data)
+  } catch(err) {
+    next(err)
+  }
+})
+
 module.exports = router
